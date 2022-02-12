@@ -6,8 +6,14 @@ import (
 	"github.com/kyokomi/emoji"
 )
 
-func GetMessage(template string, data string) string {
-	rendered := emoji.Sprint(template, data)
+const (
+	helloText = "Hello "
+	worldText = ":world_map:"
+)
+
+func GetMessage() string {
+
+	rendered := emoji.Sprint(helloText, worldText)
 	rendered = strings.TrimSuffix(rendered, " ") + "!"
 
 	return rendered
