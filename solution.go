@@ -1,8 +1,6 @@
 package solution
 
 import (
-	"strings"
-
 	"github.com/kyokomi/emoji"
 )
 
@@ -14,7 +12,7 @@ const (
 func GetMessage() string {
 
 	rendered := emoji.Sprint(helloText, worldText)
-	rendered = strings.TrimSuffix(rendered, " ") + "!"
+	rendered = rendered + "!"
 
 	return rendered
 }
