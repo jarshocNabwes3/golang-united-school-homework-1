@@ -1,14 +1,15 @@
 package solution
 
 import (
+	"strings"
 	"testing"
 )
 
-const testText = "Hello \U0001f5fa\ufe0f!"
-
 func TestGetMessage(t *testing.T) {
-	rendered := GetMessage()
-	if testText != rendered {
-		t.Error("GetMessage", rendered, testText)
+	expected := string([]rune{72, 101, 108, 108, 111, 32, 128506, 65039, 32, 33})
+	msg := GetMessage()
+
+	if !strings.EqualFold(msg, expected) {
+		t.Errorf("Unexpected result:\n\tExpected: %q\n\tGot: %q", expected, msg)
 	}
 }
